@@ -46,14 +46,17 @@ export const skills = [
 export const projects = [
   {
     image: proj1,
+    video: undefined,
     title: "Distributed Analytics Platform",
     description:
       "Designed an event-driven ingestion pipeline handling millions of records/day. Solved hot-partition bottlenecks with consistent hashing and an async fan-out worker model.",
     stack: [".NET", "Kafka", "PostgreSQL", "Redis", "React"],
     github: "#",
+    demo: undefined,
   },
   {
     image: proj2,
+    video: undefined,
     title: "Immersive Training Simulator",
     description:
       "Built a VR training environment with realistic physics interactions. Optimized draw calls and shader complexity to hold 90fps on standalone headsets.",
@@ -63,6 +66,7 @@ export const projects = [
   },
   {
     image: proj3,
+    video: undefined,
     title: "AI Voice Assistant",
     description:
       "Real-time transcription + intent layer using Whisper streaming. Engineered a low-latency WebSocket bridge and chunked VAD to keep first-token under 400ms.",
@@ -72,6 +76,7 @@ export const projects = [
   },
   {
     image: proj4,
+    video: undefined,
     title: "Microservices Boilerplate",
     description:
       "Production-ready service template with auth, observability, and contract testing baked in. Cut new-service spin-up time from days to under an hour.",
