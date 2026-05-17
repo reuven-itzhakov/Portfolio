@@ -62,12 +62,12 @@ export function ProjectsSection() {
                     >
                       <Github className="size-4" /> Repo
                     </a>
-                    <a
+                    {project.demo && <a
                       href={project.demo}
                       className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
                     >
                       <ExternalLink className="size-4" /> Demo
-                    </a>
+                    </a>}
                   </div>
                 </div>
               </article>

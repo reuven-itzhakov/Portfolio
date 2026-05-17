@@ -51,7 +51,6 @@ export const projects = [
       "Designed an event-driven ingestion pipeline handling millions of records/day. Solved hot-partition bottlenecks with consistent hashing and an async fan-out worker model.",
     stack: [".NET", "Kafka", "PostgreSQL", "Redis", "React"],
     github: "#",
-    demo: "#",
   },
   {
     image: proj2,
