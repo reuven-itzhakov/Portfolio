@@ -20,6 +20,7 @@ import proj1 from "@/assets/proj-1.jpg";
 import proj2 from "@/assets/proj-2.jpg";
 import proj3 from "@/assets/proj-3.jpg";
 import proj4 from "@/assets/proj-4.jpg";
+import cvFile from "@/assets/Reuven_Itzhakov_CV.pdf";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -144,7 +145,8 @@ function Home() {
               style={{ animationDelay: "300ms" }}
             >
               <a
-                href="#"
+                href={cvFile}
+                download="Reuven_Itzhakov_CV.pdf"
                 className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:shadow-[0_10px_30px_-10px_color-mix(in_oklab,var(--primary)_60%,transparent)] transition-all hover:-translate-y-0.5"
               >
                 <Download className="size-4" />
@@ -163,9 +165,13 @@ function Home() {
               style={{ animationDelay: "400ms" }}
             >
               {[
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: Github, href: "https://github.com", label: "GitHub" },
-                { icon: Code2, href: "https://leetcode.com", label: "LeetCode" },
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/reuven-itzhakov/",
+                  label: "LinkedIn",
+                },
+                { icon: Github, href: "https://github.com/reuven-itzhakov/", label: "GitHub" },
+                { icon: Code2, href: "https://leetcode.com/u/reuven-itzhakov/", label: "LeetCode" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -349,7 +355,7 @@ function Home() {
                   const name = data.get("name");
                   const email = data.get("email");
                   const message = data.get("message");
-                  window.location.href = `mailto:hello@reuven.dev?subject=From ${name}&body=${encodeURIComponent(
+                  window.location.href = `mailto:itzhakovreuven@gmail.com?subject=From ${name}&body=${encodeURIComponent(
                     `${message}\n\n— ${name} (${email})`,
                   )}`;
                 }}
@@ -388,10 +394,10 @@ function Home() {
                 </label>
                 <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
                   <a
-                    href="mailto:hello@reuven.dev"
+                    href="mailto:itzhakovreuven@gmail.com"
                     className="text-sm text-muted-foreground hover:text-primary font-mono inline-flex items-center gap-2"
                   >
-                    <Mail className="size-4" /> hello@reuven.dev
+                    <Mail className="size-4" /> itzhakovreuven@gmail.com
                   </a>
                   <button
                     type="submit"
@@ -412,9 +418,9 @@ function Home() {
               © {new Date().getFullYear()} Reuven Itzhakov. Built with intention.
             </p>
             <div className="flex items-center gap-4">
-              <a href="https://linkedin.com" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin className="size-4" /></a>
-              <a href="https://github.com" aria-label="GitHub" className="hover:text-primary transition-colors"><Github className="size-4" /></a>
-              <a href="https://leetcode.com" aria-label="LeetCode" className="hover:text-primary transition-colors"><Code2 className="size-4" /></a>
+              <a href="https://www.linkedin.com/in/reuven-itzhakov/" aria-label="LinkedIn" className="hover:text-primary transition-colors"><Linkedin className="size-4" /></a>
+              <a href="https://github.com/reuven-itzhakov/" aria-label="GitHub" className="hover:text-primary transition-colors"><Github className="size-4" /></a>
+              <a href="https://leetcode.com/u/reuven-itzhakov/" aria-label="LeetCode" className="hover:text-primary transition-colors"><Code2 className="size-4" /></a>
             </div>
           </div>
         </footer>
