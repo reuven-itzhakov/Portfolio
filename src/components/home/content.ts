@@ -1,10 +1,14 @@
 import { Code2, Github, Layout, Linkedin, Server, Sparkles } from "lucide-react";
 
 import heroBg from "@/assets/hero-bg.jpg";
-import proj1 from "@/assets/proj-1.jpg";
-import proj2 from "@/assets/proj-2.jpg";
-import proj3 from "@/assets/proj-3.jpg";
-import proj4 from "@/assets/proj-4.jpg";
+import Tx2ClassImg from "@/assets/Tx2Class.png";
+import Tx2ClassVid from "@/assets/Tx2Class.mp4";
+import BlibImg from "@/assets/Blib.png";
+import BlibVid from "@/assets/Blib.mp4";
+import SanoHairCutImg from "@/assets/SanoHairCut.png";
+import SanoHairCutVid from "@/assets/SanoHairCut.mp4";
+import ControlNetImg from "@/assets/ControlNet.png";
+import ControlNetVid from "@/assets/ControlNet.mp4";
 import cvFile from "@/assets/Reuven_Itzhakov_CV.pdf";
 
 export const heroAssets = {
@@ -45,43 +49,43 @@ export const skills = [
 
 export const projects = [
   {
-    image: proj1,
-    video: undefined,
-    title: "Distributed Analytics Platform",
+    image: SanoHairCutImg,
+    video: SanoHairCutVid,
+    title: "SanoHairCut Appointment Booking App",
     description:
-      "Designed an event-driven ingestion pipeline handling millions of records/day. Solved hot-partition bottlenecks with consistent hashing and an async fan-out worker model.",
-    stack: [".NET", "Kafka", "PostgreSQL", "Redis", "React"],
-    github: "#",
+      "Built a React + Vite front-end for booking and managing hair appointments with calendar and timeslot selection, user authentication, profiles and admin tools for setting availability and managing users/reservations; backed by Node.js serverless API endpoints and Firebase for persistence/auth, optimized for fast client-side scheduling and admin workflows and deployed to Vercel.",
+    stack: ["Node.js", "Express.js", "React", "Vite", "Firebase", "Vercel"],
+    github: "https://github.com/reuven-itzhakov/SanoHairCut",
+    demo: "https://sanohaircut.vercel.app/",
+  },
+  {
+    image: Tx2ClassImg,
+    video: Tx2ClassVid,
+    title: "Web Diagram & Project Editor",
+    description:
+      "Built a React + Vite front-end for creating/saving class-style diagrams with parsing/tokenization, history, and user auth; backed by a Node.js API and Firebase for persistence/auth, optimized for quick client-side objectification and project workflows and deployed to Vercel.",
+    stack: ["Node.js", "Express.js", "React", "Vite", "Firebase", "Vercel"],
+    github: "https://github.com/pelegc49/Web",
+    demo: "https://web-w9fv.vercel.app/home",
+  },
+  {
+    image: BlibImg,
+    video: BlibVid,
+    title: "BLib - Java Library Management (Client‑Server)",
+    description:
+      "Built a Java client–server library management application with JavaFX (FXML + CSS) desktop UIs for subscribers and librarians, server-side networking and scheduled tasks, and JDBC/SQL persistence; includes authentication, search, borrow/extend/return workflows, messaging, subscriber management, and report generation.",
+    stack: ["Java", "JavaFX", "JDBC", "SQL", "Socket", "Multithreading"],
+    github: "https://github.com/reuven-itzhakov/BLib-Project",
     demo: undefined,
   },
   {
-    image: proj2,
-    video: undefined,
-    title: "Immersive Training Simulator",
+    image: ControlNetImg,
+    video: ControlNetVid,
+    title: "ControlNet - Device Management & Agent Suite",
     description:
-      "Built a VR training environment with realistic physics interactions. Optimized draw calls and shader complexity to hold 90fps on standalone headsets.",
-    stack: ["Unity", "C#", "OpenXR", "Shader Graph"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    image: proj3,
-    video: undefined,
-    title: "AI Voice Assistant",
-    description:
-      "Real-time transcription + intent layer using Whisper streaming. Engineered a low-latency WebSocket bridge and chunked VAD to keep first-token under 400ms.",
-    stack: ["Node.js", "Whisper", "WebSockets", "Next.js"],
-    github: "#",
-    demo: "#",
-  },
-  {
-    image: proj4,
-    video: undefined,
-    title: "Microservices Boilerplate",
-    description:
-      "Production-ready service template with auth, observability, and contract testing baked in. Cut new-service spin-up time from days to under an hour.",
-    stack: [".NET", "Docker", "gRPC", "OpenTelemetry"],
-    github: "#",
-    demo: "#",
+      "Built a native C++ Windows agent (device tracking, screen capture, telemetry collection, downloads/OTA, hotkeys, keylogging and local logging) that integrates with Firebase for auth/logging and remote commands; a Node.js + Express middleware API for device management, auth, downloads, sequences and stats; and a React + Vite dashboard for realtime monitoring, device administration, file distribution, and sequence control. Includes the Firebase C++ SDK and build support (Visual Studio solution + CMake for SDK), Firestore-backed persistence and Storage for file delivery, and a Vercel-hosted frontend (with Node middleware hosted separately). Optimized for low-latency telemetry, reliable device updates, and admin workflows.",
+    stack: ["C++", "Node.js", "Express.js", "React", "Vite", "Firebase", "Vercel" ],
+    github: "https://github.com/reuven-itzhakov/ControlNet",
+    demo: undefined,
   },
 ];

@@ -14,7 +14,7 @@ export function AboutSection() {
           <div className="mt-8 grid md:grid-cols-5 gap-8 text-muted-foreground leading-relaxed">
             <p className="md:col-span-3 text-lg">
               I focus on writing <span className="text-foreground">clean, deliberate code</span>{" "}
-              and shaping software architecture around principles that scale —{" "}
+              and shaping software architecture around principles that scale -{" "}
               <span className="text-foreground">Microservices, SOLID,</span> and domain-driven
               design. My work lives at the intersection of complex backend logic and the
               user-facing experience built on top of it.
@@ -22,7 +22,7 @@ export function AboutSection() {
             <p className="md:col-span-2">
               I enjoy bridging the gap: turning ambiguous problems into systems that are
               predictable, observable, and pleasant to extend. Whether it&apos;s an API, a real-time
-              pipeline, or an AI integration — the goal is the same: ship something that&apos;s
+              pipeline, or an AI integration - the goal is the same: ship something that&apos;s
               reliable today and easy to change tomorrow.
             </p>
           </div>

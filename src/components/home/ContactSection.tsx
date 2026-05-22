@@ -11,7 +11,7 @@ function buildMailtoUrl(form: HTMLFormElement) {
 
   return `mailto:itzhakovreuven@gmail.com?subject=${encodeURIComponent(
     `From ${name}`,
-  )}&body=${encodeURIComponent(`${message}\n\n— ${name} (${email})`)}`;
+  )}&body=${encodeURIComponent(`${message}\n\n- ${name} (${email})`)}`;
 }
 
 export function ContactSection() {
@@ -30,7 +30,7 @@ export function ContactSection() {
           </h2>
           <p className="mt-5 text-muted-foreground text-center max-w-xl mx-auto">
             Have a project in mind, a role to fill, or just want to talk architecture? Drop a
-            message — I read everything.
+            message - I read everything.
           </p>
         </Reveal>
 

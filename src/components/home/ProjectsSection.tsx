@@ -17,7 +17,7 @@ export function ProjectsSection() {
               </h2>
             </div>
             <p className="text-muted-foreground max-w-sm">
-              A handful of builds where the interesting part wasn&apos;t the framework — it was the
+              A handful of builds where the interesting part wasn&apos;t the framework - it was the
               problem underneath.
             </p>
           </div>
@@ -85,12 +85,16 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           <div className="mt-6 pt-5 border-t border-border flex items-center gap-4 text-sm">
             <a
               href={project.github}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors"
             >
               <Github className="size-4" /> Repo
             </a>
             {project.demo && <a
               href={project.demo}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
             >
               <ExternalLink className="size-4" /> Demo

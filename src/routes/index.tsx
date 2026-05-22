@@ -5,17 +5,17 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Reuven Itzhakov — Full-Stack Developer" },
+      { title: "Reuven Itzhakov - Full-Stack Developer" },
       {
         name: "description",
         content:
           "Full-Stack Developer focused on scalable backend architecture, modern web frameworks, and practical AI integration.",
       },
-      { property: "og:title", content: "Reuven Itzhakov — Full-Stack Developer" },
+      { property: "og:title", content: "Reuven Itzhakov - Full-Stack Developer" },
       {
         property: "og:description",
         content:
-          "Portfolio of Reuven Itzhakov — backend architecture, modern web, and AI integration.",
+          "Portfolio of Reuven Itzhakov - backend architecture, modern web, and AI integration.",
       },
     ],
   }),
