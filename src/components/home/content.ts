@@ -3,7 +3,7 @@ import { Code2, Github, Layout, Linkedin, Server, Sparkles } from "lucide-react"
 import heroBg from "@/assets/hero-bg.jpg";
 import Tx2ClassImg from "@/assets/Tx2Class.png";
 import Tx2ClassVid from "@/assets/Tx2Class.mp4";
-import BLibImg from "@/assets/BLib.png";
+// import BLibImg from "@/assets/BLib.png";
 import BLibVid from "@/assets/BLib.mp4";
 import SanoHairCutImg from "@/assets/SanoHairCut.png";
 import SanoHairCutVid from "@/assets/SanoHairCut.mp4";
@@ -70,7 +70,7 @@ export const projects = [
     demo: "https://web-w9fv.vercel.app/home",
   },
   {
-    image: BLibImg,
+    image: undefined,//BLibImg,
     video: BLibVid,
     title: "BLib - Java Library Management (Client‑Server)",
     description: "Built a Java client–server library management application with JavaFX (FXML + CSS) desktop UIs for subscribers and librarians, server-side networking and scheduled tasks, and JDBC/SQL persistence; includes authentication, search, borrow/extend/return workflows, messaging, subscriber management, and report generation.",
