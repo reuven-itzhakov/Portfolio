@@ -9,13 +9,14 @@ export function ProjectsSection() {
     <section id="projects" className="px-6 py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <div className="flex items-end justify-between flex-wrap gap-4">
-            <div>
-              <p className="font-mono text-sm text-primary mb-4">// selected_work</p>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-                Projects I&apos;m proud of.
-              </h2>
-            </div>
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-xs text-primary tracking-wider">03</span>
+            <div className="h-px w-12 bg-primary/30" />
+          </div>
+          <div className="mt-4 flex items-end justify-between flex-wrap gap-4">
+            <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight">
+              Projects I&apos;m proud of.
+            </h2>
             <p className="text-muted-foreground max-w-sm">
               A handful of builds where the interesting part wasn&apos;t the framework - it was the
               problem underneath.
@@ -33,12 +34,12 @@ export function ProjectsSection() {
   );
 }
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Reveal delay={(index % 2) * 120}>
-      <article className="glass-card rounded-2xl overflow-hidden hover-lift h-full flex flex-col group">
+      <article className="card-solid rounded-lg overflow-hidden hover-border h-full flex flex-col group">
         <div
           className="relative aspect-[16/9] overflow-hidden bg-secondary"
           onMouseEnter={() => setIsHovered(true)}
@@ -65,7 +66,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />
         </div>
         <div className="p-6 flex flex-col flex-1">
-          <h3 className="text-xl font-semibold tracking-tight flex items-center gap-2">
+          <h3 className="font-heading text-xl font-semibold tracking-tight flex items-center gap-2">
             {project.title}
             <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
           </h3>
@@ -76,7 +77,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             {project.stack.map((stackItem) => (
               <span
                 key={stackItem}
-                className="font-mono text-[11px] px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20"
+                className="font-mono text-[11px] px-2 py-0.5 rounded-md bg-primary/10 text-primary"
               >
                 {stackItem}
               </span>
@@ -91,14 +92,16 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             >
               <Github className="size-4" /> Repo
             </a>
-            {project.demo && <a
-              href={project.demo}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
-            >
-              <ExternalLink className="size-4" /> Demo
-            </a>}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
+              >
+                <ExternalLink className="size-4" /> Demo
+              </a>
+            )}
           </div>
         </div>
       </article>

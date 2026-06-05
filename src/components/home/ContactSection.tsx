@@ -24,25 +24,31 @@ export function ContactSection() {
     <section id="contact" className="px-6 py-28">
       <div className="mx-auto max-w-3xl">
         <Reveal>
-          <p className="font-mono text-sm text-primary mb-4 text-center">// get_in_touch</p>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-center">
-            Let&apos;s build something <span className="text-gradient">solid</span>.
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-xs text-primary tracking-wider">04</span>
+            <div className="h-px w-12 bg-primary/30" />
+          </div>
+          <h2 className="mt-4 font-heading text-3xl md:text-5xl font-semibold tracking-tight">
+            Let&apos;s build something <span className="text-primary">solid</span>.
           </h2>
-          <p className="mt-5 text-muted-foreground text-center max-w-xl mx-auto">
+          <p className="mt-5 text-muted-foreground max-w-xl">
             Have a project in mind, a role to fill, or just want to talk architecture? Drop a
             message - I read everything.
           </p>
         </Reveal>
 
         <Reveal delay={120}>
-          <form onSubmit={handleSubmit} className="mt-12 glass-card rounded-2xl p-6 md:p-8 space-y-5">
+          <form
+            onSubmit={handleSubmit}
+            className="mt-12 card-solid rounded-lg p-6 md:p-8 space-y-5"
+          >
             <div className="grid md:grid-cols-2 gap-5">
               <label className="block">
                 <span className="font-mono text-xs text-muted-foreground">name</span>
                 <input
                   required
                   name="name"
-                  className="mt-2 w-full bg-secondary/40 border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-primary/60 focus:bg-secondary/70 transition-colors"
+                  className="mt-2 w-full bg-secondary/40 border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-primary/60 focus:bg-secondary/70 transition-colors"
                   placeholder="Your name"
                 />
               </label>
@@ -52,7 +58,7 @@ export function ContactSection() {
                   required
                   type="email"
                   name="email"
-                  className="mt-2 w-full bg-secondary/40 border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-primary/60 focus:bg-secondary/70 transition-colors"
+                  className="mt-2 w-full bg-secondary/40 border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-primary/60 focus:bg-secondary/70 transition-colors"
                   placeholder="you@domain.com"
                 />
               </label>
@@ -63,7 +69,7 @@ export function ContactSection() {
                 required
                 name="message"
                 rows={5}
-                className="mt-2 w-full bg-secondary/40 border border-border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-primary/60 focus:bg-secondary/70 transition-colors resize-none"
+                className="mt-2 w-full bg-secondary/40 border border-border rounded-md px-4 py-2.5 text-sm focus:outline-none focus:border-primary/60 focus:bg-secondary/70 transition-colors resize-none"
                 placeholder="What are you working on?"
               />
             </label>
@@ -76,7 +82,7 @@ export function ContactSection() {
               </a>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:-translate-y-0.5 transition-transform"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 transition-opacity"
               >
                 Send message
                 <Send className="size-4" />

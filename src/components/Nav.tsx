@@ -25,34 +25,26 @@ export function Nav() {
     >
       <div
         className={`mx-auto max-w-6xl px-6 flex items-center justify-between transition-all ${
-          scrolled
-            ? "glass-card rounded-full px-4 py-2"
-            : ""
+          scrolled ? "bg-card border border-border rounded-lg px-4 py-2" : ""
         }`}
         style={scrolled ? { maxWidth: "60rem" } : undefined}
       >
-        <Link to="/" className="font-mono text-sm tracking-tight">
-          <span className="text-primary">{"<"}</span>
+        <Link to="/" className="font-heading text-sm font-semibold tracking-tight">
           <span className="text-foreground">reuven</span>
-          <span className="text-accent">{".dev"}</span>
-          <span className="text-primary">{" />"}</span>
+          <span className="text-primary">.dev</span>
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="hover:text-foreground transition-colors"
-            >
+            <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">
               {l.label}
             </a>
           ))}
         </nav>
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center font-mono text-xs px-3 py-1.5 rounded-full border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
+          className="hidden md:inline-flex items-center text-xs font-medium px-3 py-1.5 rounded-md border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
         >
-          let's_talk()
+          Get in touch
         </a>
       </div>
     </header>
