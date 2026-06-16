@@ -6,25 +6,29 @@ import { projects } from "@/components/home/content";
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="px-6 py-28">
+    <section id="projects" className="relative px-6 py-24 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <div className="flex items-center gap-4">
-            <span className="font-mono text-xs text-primary tracking-wider">03</span>
-            <div className="h-px w-12 bg-primary/30" />
-          </div>
-          <div className="mt-4 flex items-end justify-between flex-wrap gap-4">
-            <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight">
-              Projects I&apos;m proud of.
-            </h2>
-            <p className="text-muted-foreground max-w-sm">
-              A handful of builds where the interesting part wasn&apos;t the framework - it was the
-              problem underneath.
-            </p>
-          </div>
+          <header>
+            <div className="flex items-center gap-4">
+              <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-mono text-xs tracking-wider text-primary">
+                03
+              </span>
+              <div className="h-px w-16 bg-gradient-to-r from-primary/60 to-transparent" />
+            </div>
+            <div className="mt-5 flex flex-wrap items-end justify-between gap-6">
+              <h2 className="max-w-2xl font-heading text-4xl font-semibold tracking-[-0.04em] text-balance sm:text-5xl">
+                Projects I&apos;m proud of.
+              </h2>
+              <p className="max-w-sm leading-7 text-muted-foreground">
+                A handful of builds where the interesting part wasn&apos;t the framework - it was the
+                problem underneath.
+              </p>
+            </div>
+          </header>
         </Reveal>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
@@ -39,7 +43,11 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
 
   return (
     <Reveal delay={(index % 2) * 120}>
-      <article className="card-solid rounded-lg overflow-hidden hover-border h-full flex flex-col group">
+      <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-card/70 shadow-xl shadow-black/20 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:bg-card/90 hover:shadow-2xl hover:shadow-primary/10">
+        <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
+          <div className="absolute -right-24 -top-24 size-56 rounded-full bg-primary/10 blur-3xl" />
+        </div>
         <div
           className="relative aspect-[16/9] overflow-hidden bg-secondary"
           onMouseEnter={() => setIsHovered(true)}
@@ -51,7 +59,8 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
               autoPlay
               loop
               muted
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              playsInline
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           ) : (
             <img
@@ -60,35 +69,34 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
               loading="lazy"
               width={1024}
               height={640}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent opacity-90" />
         </div>
-        <div className="p-6 flex flex-col flex-1">
-          <h3 className="font-heading text-xl font-semibold tracking-tight flex items-center gap-2">
+        <div className="relative flex flex-1 flex-col p-6 sm:p-7">
+          <h3 className="flex items-start gap-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-foreground">
             {project.title}
-            <ArrowUpRight className="size-4 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
           </h3>
-          <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">
+          <p className="mt-4 flex-1 text-sm leading-7 text-muted-foreground">
             {project.description}
           </p>
-          <div className="mt-5 flex flex-wrap gap-1.5">
+          <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${project.title} tech stack`}>
             {project.stack.map((stackItem) => (
-              <span
+              <li
                 key={stackItem}
-                className="font-mono text-[11px] px-2 py-0.5 rounded-md bg-primary/10 text-primary"
+                className="rounded-full border border-primary/15 bg-primary/10 px-3 py-1.5 font-mono text-[11px] text-primary shadow-sm shadow-primary/5 transition-colors duration-300 hover:border-primary/40 hover:bg-primary/15"
               >
                 {stackItem}
-              </span>
+              </li>
             ))}
-          </div>
-          <div className="mt-6 pt-5 border-t border-border flex items-center gap-4 text-sm">
+          </ul>
+          <div className="mt-7 flex items-center gap-3 border-t border-white/10 pt-5 text-sm">
             <a
               href={project.github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-secondary/45 px-4 py-2 font-medium text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
             >
               <Github className="size-4" /> Repo
             </a>
@@ -97,7 +105,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
                 href={project.demo}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-secondary/45 px-4 py-2 font-medium text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:bg-accent/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
               >
                 <ExternalLink className="size-4" /> Demo
               </a>
